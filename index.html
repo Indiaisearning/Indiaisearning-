@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IndiaIsEarning - Refer & Earn ₹1000</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8f0;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    header {
+      background-color: #ff6b00;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .container {
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .highlight {
+      background: #fff3e0;
+      padding: 20px;
+      border: 2px dashed #ff9800;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .highlight h2 {
+      margin: 0 0 10px;
+      color: #e65100;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 70%;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+    }
+    button {
+      padding: 10px 16px;
+      margin-top: 10px;
+      border: none;
+      background: #ff6b00;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e65c00;
+    }
+    .referral-output {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .form-section {
+      margin-top: 30px;
+      background: #f2f2f2;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .form-section input, .form-section textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #888;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📢 IndiaIsEarning</h1>
+    <p>Join & Refer to Earn ₹1000</p>
+  </header>
+
+  <div class="container">
+    <div class="highlight">
+      <h2>🎁 Refer 10 People → Earn ₹1000!</h2>
+      <p>Invite your friends to join our Telegram group and get rewarded instantly!</p>
+      <input type="text" id="usernameInput" placeholder="Enter your Telegram username (without @)">
+      <br>
+      <button onclick="generateLink()">Generate Referral Link</button>
+      <div class="referral-output" id="referralLinkBox"></div>
+    </div>
+
+    <a href="https://t.me/TIGER999OFFICAL" target="_blank">
+      <button>🔗 Join Telegram Group</button>
+    </a>
+
+    <div class="form-section">
+      <h3>📝 Claim Your Reward</h3>
+      <input type="text" placeholder="Your Name" />
+      <input type="text" placeholder="Your Telegram Username" />
+      <textarea rows="4" placeholder="Paste screenshot link or write your message"></textarea>
+      <button>Submit Claim</button>
+    </div>
+
+    <footer>
+      Made with ❤️ by IndiaIsEarning Team
+    </footer>
+  </div>
+
+  <script>
+    function generateLink() {
+      const username = document.getElementById("usernameInput").value.trim();
+      if (username === "") {
+        alert("Please enter your Telegram username.");
+        return;
+      }
+      const referralLink = `https://t.me/TIGER999OFFICAL?start=${username}`;
+      document.getElementById("referralLinkBox").innerHTML = `
+        Your Referral Link:<br>
+        <a href="${referralLink}" target="_blank">${referralLink}</a>
+        <br><button onclick="copyLink('${referralLink}')">📋 Copy Link</button>
+      `;
+    }
+
+    function copyLink(link) {
+      navigator.clipboard.writeText(link);
+      alert("Referral link copied!");
+    }
+  </script>
+</body>
+</html>
